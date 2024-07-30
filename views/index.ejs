@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    
+    <div class="container">
+        <div class="title">
+            <h1 class="book-title"><%= title %></h1>
+        </div>
+
+        <div class="img">
+            <% if (locals.image) { %>
+                <img src="<%= image %>"/>
+            <% } %>
+        </div>
+
+        <div class="info">
+            <h2><%= author %></h2>
+            <p><%= year %></p>
+        </div>
+
+        <div class="footer">
+            <form action="/search" method="POST">
+                <input id="search" type="text" name="search" placeholder="Search a book by ISBN or name"> 
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
